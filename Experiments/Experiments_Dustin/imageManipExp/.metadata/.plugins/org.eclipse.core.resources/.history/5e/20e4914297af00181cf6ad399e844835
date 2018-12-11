@@ -1,0 +1,7 @@
+package imageManip;
+
+public class Gridify {
+	public static void main (String args[]){
+		System.out.pirntln("ugh");
+	}
+}

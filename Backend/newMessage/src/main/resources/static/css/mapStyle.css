@@ -1,0 +1,50 @@
+
+
+.gameGrid{
+    position: relative;
+}
+
+.marker{
+    text-align: center;
+    vertical-align: bottom;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.8;
+}
+
+.devTools{
+    background-color: lightblue;
+    display: block;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    right: 0;
+    width: 200px;
+    padding: 5px;
+}
+
+.trackMouse .hoveringTile{
+    background-color: green;
+    opacity: .5;
+}
+
+.actionTarget{
+    border: 2px dashed lime;
+    margin-top: -2px;
+    margin-left: -2px;
+}
+
+.markerControlsWrapper, .styleWrapper, .mapInfoWrapper{
+    display: inline-block;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.hidden {
+    display: none;
+}
+
+.toggleVisibilityButton{
+    height: 24px;
+    width: 24px;
+}

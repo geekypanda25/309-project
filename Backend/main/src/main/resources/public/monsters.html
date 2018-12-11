@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>||Working with elements||</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="monsters.js"></script>
+    <link rel="stylesheet" href="monsterStyle.css" type="text/css">
+</head>
+<body>
+<div onload="addElement()" >
+    <table id="monsterTable">
+        <tbody id="monsterElements">
+        <tr>
+            <th class="monsterName">Monster Names</th>
+            <th class="monsterAttack">Monster Attacks</th>
+            <th class="monsterDescription">Monster Description</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<button onclick="showHide()">Add Monster</button>
+
+<form id="monsterAdd" style="display: none;">
+    <label>Monster Name</label>
+    <input id="newMonName" type="text" placeholder="Enter Name">
+    <label>Monster Damage</label>
+    <input id="newMonAttack" type="text" placeholder="Enter Damage">
+    <label>Monster Description</label>
+    <input id="newMonDesc" type="text" placeholder="Enter Description">
+    <input type="submit" onclick="addMon()" >
+</form>
+</body>
+</html>

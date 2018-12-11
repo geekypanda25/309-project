@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1066562241825",
+    "firebase_url": "https://roll19-c55da.firebaseio.com",
+    "project_id": "roll19-c55da",
+    "storage_bucket": "roll19-c55da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066562241825:android:defc7cf988111c70",
+        "android_client_info": {
+          "package_name": "net.roll19.roll19flutterchatclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066562241825-pf4fh7i6lg02765plvf9ql4q8kls8liv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHv9ESOdGRrWzb4tMY-8gQSBlyNytwHdc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

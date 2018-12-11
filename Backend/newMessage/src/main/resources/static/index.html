@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+      <title>Chat</title>
+      <link rel="stylesheet" href="/css/main.css" />
+      <link rel="stylesheet" href="/css/mapStyle.css" />
+  </head>
+  <body>
+  <noscript>
+      <h2>Sorry! Your browser doesn't support Javascript</h2>
+  </noscript>
+
+  <table>
+      <td id="notMap">
+          <div id="username-page">
+              <div class="username-page-container">
+                  <h1 class="title">Type your username</h1>
+                  <form id="usernameForm" name="usernameForm">
+                      <div class="form-group">
+                          <input type="text" id="name" placeholder="Username" autocomplete="off" class="form-control" />
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" class="accent username-submit">Start Chatting</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+          <div id="chat-page" class="hidden">
+              <div class="chat-container">
+                  <div class="chat-header">
+                      <h2>Chat</h2>
+                  </div>
+                  <div class="connecting">
+                      Connecting...
+                  </div>
+                  <ul id="messageArea">
+
+                  </ul>
+                  <form id="messageForm" name="messageForm" nameForm="messageForm">
+                      <div class="form-group">
+                          <div class="input-group clearfix">
+                              <input type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control"/>
+                              <button type="submit" class="primary">Send</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </td>
+
+      <td id="bigOlCancerousMapWrapper">
+          <div class="mapInfoWrapper">
+              <button class="toggleVisibilityButton"
+                      onClick="toggleVisibility(document.getElementsByClassName('mapInfo')[0])"
+                      title="Toggle Map Info Visibility"
+              >-</button>
+              <div class="mapInfo">
+                  <form id="mapData">
+                      Upload your map
+                      <input id="mapImage" type="file" onchange="previewFile()" /></br>
+                      Enter your map height in pixels
+                      <input id="mapHeight" type="number" value=320 /></br>
+                      Enter your map width in pixels&nbsp;
+                      <input id="mapWidth"  type="number" value=608 /></br>
+                      Enter your grid size in pixels&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input id="gridSize"  type="number" value=20  /></br>
+                  </form>
+                  <button onClick="createMap()">Update map</button>
+              </div>
+          </div>
+
+          </br></br>
+
+          <div class="gameGrid">
+              <!--temp hardcoded source-->
+              <img id="gameBoard" src="C:\Users\djsch\Desktop\coms309\SD_2\Experiments\Experiments_Dustin\imageManipExp\imageManip\landscapeOut.jpg">
+          </div>
+
+          <div class="markerControlsWrapper">
+              <button class="toggleVisibilityButton"
+                      onClick="toggleVisibility(document.getElementsByClassName('markerControls')[0])"
+                      title="Toggle Marker Controls Visibility"
+              >+</button>
+              <div class="markerControls hidden">
+                  <button class="addMarker">Add marker</button>
+                  <button class="destroyMarker" onClick="destroyMarker()">Destroy marker</button>
+                  <div class="styleWrapper">
+                      <button class="styleMarker" onClick="styleMarker()">Style marker</button>
+                      <input class="styleColor" type="color"/>
+                      <input class="styleText" size="5" type="text" placeholder="Symbol"/>
+                      <button class="styleImageDisplay" onClick="document.getElementsByClassName('styleImage')[0].click()">Marker image</button> <!-- lol -->
+                      <input class="styleImage" style="display: none" type="file"/>
+                      <input class="styleTitle" size="5" type="text" placeholder="Name"/>
+                      <input class="styleSize" type="number" value=1 style="width:30px" min="1" max="9" />
+                  </div>
+              </div>
+          </div>
+
+          <form id="mapForm" name="mapForm" nameForm="mapForm">
+              <button type="submit" class="primary">Send</button>
+          </form>
+
+
+          <div class="devTools hidden"> <!-- This will be hidden when we're not developing, but is convenient for now -->
+              Neat dev stuff </br>
+              <button onClick="mapContentsToObject()">mapContentsToObject</button>
+              <button onClick="yeetJSONtoServer(mapContentsToObject())">Yeet the JSON</button>
+              <button onClick="createFakeJSON()">createFakeJSON</button>
+              <button onClick="populateMapFromJSON(createFakeJSON())">populateMapFromJSON</button>
+          </div>
+
+          <div id="invisible" style="display: none">Need a place to store a marker so it can be found by the silly js so it can be placed...</div>
+      </td>
+  </table>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+  <script src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rand</title>
+</head>
+<body>
+
+<div class="dieAdder">
+	Add a die <br>
+	<select id="dieSelect">
+		<option value="d_four">4</option>
+		<option value="d_six">6</option>
+		<option value="d_eight">8</option>
+		<option value="d_ten">10</option>
+		<option value="d_twelve">12</option>
+		<option value="d_twenty">20</option>
+	</select>
+	<button onClick="addDie()">Add</button>
+</div>
+
+<div class="yourDie">
+
+</div>
+
+
+<div class="dieContainer dieTemplate">
+	<button class="dieRoller" onClick="rollDie(this)"></button>
+	<div class="dieValue">0</div>
+</div>
+
+<div class="rollAllWrapper">
+	<button onClick="rollAll()">Roll All</button>
+</div>
+
+
+
+</body>
+</html>
+
+<script>
+function addDie(){
+	var dieSelect = document.getElementById("dieSelect");
+	var dieToAdd = dieSelect.options[dieSelect.selectedIndex].text;
+
+	var yourDie = document.getElementsByClassName("yourDie")[0];
+	var dieTemplate = document.getElementsByClassName("dieTemplate")[0].cloneNode(true);
+	
+	dieTemplate.classList.remove("dieTemplate");
+	dieTemplate.classList.add("liveDie");
+	
+	dieTemplate.childNodes[1].innerHTML = dieToAdd;	
+	
+	yourDie.appendChild(dieTemplate);
+}
+
+function rollDie(button){
+	var max = button.innerHTML;
+	var rolled = doClientRand(max);
+	//var rolled = doServerRand(max);
+	console.log(button.nextSibling.nextSibling);
+	button.nextSibling.nextSibling.innerHTML = rolled;
+}
+
+function doClientRand(max){
+	return Math.floor(Math.random() * max) + 1;
+}
+
+function doServerRand(){
+	//magic
+}
+
+function rollAll(){
+	var dice = document.getElementsByClassName("liveDie");
+	var i = 0;
+	for(i=0; i< dice.length; i++){
+		rollDie(dice[i].childNodes[1]);
+	}
+}
+
+</script>
+
+<style>
+	.dieRoller{
+		width: 50px;
+		height: 50px;
+	}
+	.dieContainer{
+		display: inline-block;
+		padding: 0px 2px;
+	}
+	.dieTemplate{
+		display: none;
+	}
+	.dieValue{
+		border: 1px solid  black;
+		height: 25px;
+		width: 25px;
+		margin: auto;
+		text-align: center;
+		padding: 0;
+	}
+</style>

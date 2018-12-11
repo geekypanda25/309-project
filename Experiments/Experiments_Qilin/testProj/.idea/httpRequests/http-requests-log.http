@@ -1,0 +1,88 @@
+GET http://jboss.org/resteasy
+
+<> 2018-09-09T102956.200.html
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/htmltest
+
+<> 2018-09-09T060449.200.html
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloworld
+
+<> 2018-09-09T060415.200.txt
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloword
+
+<> 2018-09-09T060405.404.html
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/htmltest
+
+<> 2018-09-09T060240.200.html
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloworld
+
+<> 2018-09-09T054326.200.txt
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloworld
+
+<> 2018-09-09T054257.200.txt
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloworld
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloworld
+
+<> 2018-09-09T054239.200.txt
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloworld
+
+<> 2018-09-09T054157.200.txt
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/
+
+<> 2018-09-09T054148.404.html
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/
+
+<> 2018-09-09T054113.404.html
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloword
+
+<> 2018-09-09T054102.404.html
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloword/
+
+<> 2018-09-09T053943.404.html
+
+###
+
+GET http://localhost:8080/testProj_war_exploded/helloword
+
+<> 2018-09-09T053909.404.html
+
+###
+
